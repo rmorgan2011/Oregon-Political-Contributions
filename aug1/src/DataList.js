@@ -133,6 +133,7 @@ class DataList extends React.Component{
     return (
             <div style={{display: 'flex'}}>
               <ListEle ele={indData} title="Individual Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
+    
               <ListEle ele={busData} title="Business Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
             </div>
           )
