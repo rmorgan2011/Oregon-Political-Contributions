@@ -1,4 +1,5 @@
 import React from 'react';
+import DataList from './DataList'
 
 class DataViewer extends React.Component{
   constructor(props){
@@ -6,7 +7,7 @@ class DataViewer extends React.Component{
     this.state = {};
   }
   render(){
-    return <div>Hello</div>
+    return <DataList/>  
 
   }
 }
