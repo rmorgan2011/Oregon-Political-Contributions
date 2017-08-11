@@ -20,6 +20,38 @@ class DataList extends React.Component{
     this.updateNum = this.updateNum.bind(this);
     this.sortAscend = this.sortAscend.bind(this);
     this.sortDescend = this.sortDescend.bind(this);
+    this.sortAlpha = this.sortAlpha.bind(this);
+  }
+
+  sortAlpha(e,title){
+    e.preventDefault();
+    if(title==="Individual Contributions"){
+      this.setState({indState: {indData: this.state.indState.indData.sort(function(a,b){
+        var aUpper = a.contributor_payee.toUpperCase();
+        var bUpper = b.contributor_payee.toUpperCase();
+        if (aUpper < bUpper) {
+          return -1;
+        }
+        if (aUpper > bUpper) {
+          return 1;
+        }
+        return 0;
+      }), indNum: this.state.indState.indNum}});
+    }
+    else{
+
+      this.setState({busState: {busData: this.state.busState.busData.sort(function(a,b){
+        var aUpper = a.contributor_payee.toUpperCase();
+        var bUpper = b.contributor_payee.toUpperCase();
+        if (aUpper < bUpper) {
+          return -1;
+        }
+        if (aUpper > bUpper) {
+          return 1;
+        }
+        return 0;
+      }), busNum: this.state.busState.busNum}});
+    }
   }
 
   sortAscend(e,title){
@@ -31,7 +63,7 @@ class DataList extends React.Component{
       }), indNum: this.state.indState.indNum}});
     }
     else{
-      
+
       this.setState({busState: {busData: this.state.busState.busData.sort(function(a,b){
         return a.sum - b.sum;
       }), busNum: this.state.busState.busNum}});
@@ -64,7 +96,6 @@ class DataList extends React.Component{
 
   update(e){
     e.preventDefault();
-  //  this.setState({indState: {indData: this.state.indState.indData, indNum: 7}});
     this.performFetch();
   }
 
@@ -92,6 +123,7 @@ class DataList extends React.Component{
   }
 
   render(){
+    const sortAlpha=this.sortAlpha;
     const sortAscend=this.sortAscend;
     const sortDescend=this.sortDescend;
     const updateNum=this.updateNum;
@@ -100,8 +132,8 @@ class DataList extends React.Component{
     const busData = this.state.busState.busData;
     return (
             <div style={{display: 'flex'}}>
-              <ListEle ele={indData} title="Individual Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend}/>
-              <ListEle ele={busData} title="Business Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend}/>
+              <ListEle ele={indData} title="Individual Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
+              <ListEle ele={busData} title="Business Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
             </div>
           )
 
