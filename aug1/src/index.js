@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import DataViewer from './DataViewer'
 import registerServiceWorker from './registerServiceWorker';
+import StyledComponents from './StyledComponents'
 // import Avatar from './Avatar';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -22,5 +23,5 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 //   )
 // }
 
-ReactDOM.render(<DataViewer/>, document.getElementById('root'));
+ReactDOM.render(<StyledComponents/>, document.getElementById('root'));
 registerServiceWorker();
