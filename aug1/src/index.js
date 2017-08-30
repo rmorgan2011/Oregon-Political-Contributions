@@ -4,6 +4,9 @@ import './index.css';
 import DataViewer from './DataViewer'
 import registerServiceWorker from './registerServiceWorker';
 import StyledComponents from './StyledComponents'
+import RoutingApp from './RoutingApp'
+import ContactRouting from './ContactRouting'
+import SteamRequest from './SteamRequest'
 // import Avatar from './Avatar';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
@@ -23,5 +26,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 //   )
 // }
 
-ReactDOM.render(<StyledComponents/>, document.getElementById('root'));
+ReactDOM.render(
+  <div>
+    <DataViewer/>
+    <SteamRequest/>
+  </div>,
+  document.getElementById('root'));
 registerServiceWorker();

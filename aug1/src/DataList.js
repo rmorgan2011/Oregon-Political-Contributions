@@ -8,11 +8,11 @@ class DataList extends React.Component{
     this.state = {
       busState: {
         busData: [],
-        busNum: 5
+        busNum: 10
       },
       indState: {
         indData: [],
-        indNum: 5
+        indNum: 10
       }
     };
     this.performFetch = this.performFetch.bind(this);
@@ -131,10 +131,11 @@ class DataList extends React.Component{
     const indData =this.state.indState.indData;
     const busData = this.state.busState.busData;
     return (
+      //wrapper position relative, children positioned absolute withing element
             <div style={{display: 'flex'}}>
-              <ListEle ele={indData} title="Individual Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
-    
-              <ListEle ele={busData} title="Business Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
+              <ListEle  ele={indData} title="Individual Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
+
+              <ListEle  ele={busData} title="Business Contributions" methodRef={methodRef} updateNum={updateNum} sortDescend={sortDescend} sortAscend={sortAscend} sortAlpha={sortAlpha}/>
             </div>
           )
 

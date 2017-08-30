@@ -7,7 +7,12 @@ class DataViewer extends React.Component{
     this.state = {};
   }
   render(){
-    return <DataList/>  
+    return(
+    <div>
+      <h1 style={{color: '#337ab7', marginLeft: '20px', marginBotton: '0'}}>Oregon Political Contributions</h1>
+      <DataList/>
+    </div>
+  )
 
   }
 }
